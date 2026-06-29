@@ -13,3 +13,15 @@ function fetchProductsThen() {
             handleError(error);
         });
 }
+
+// Step 4
+async function fetchProductsAsync() {
+    try {
+        const response = await fetch(apiURL);
+        const products = await response.json();
+
+        displayProducts(products);
+    } catch (error) {
+        handleError(error);
+    }
+}
